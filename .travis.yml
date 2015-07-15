@@ -1,0 +1,30 @@
+language: php
+php:
+  - 5.5
+
+before_install:
+  - composer self-update
+  - pear channel-discover pear.drush.org
+
+install:
+  - pear install drush/drush
+  - phpenv rehash
+
+before_script:
+  - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - drush status
+  - curl http://127.0.0.1/
+
+script:
+  - drush -y en simpletest
+  - drush test-run SI
+  - drush -y dis simpletest
+
+after_script:
+  - ps aux | grep 'timeincsimr@staging-5655'
+  - kill $(ps aux | grep 'timeincsimr@staging-5655' | awk '{print $2}')
+
+notifications:
+  slack:
+    secure: fI8gQDL91BUroJNogwj6DTNykKHwVv2GzgoaquNl1qOKg12l/f8U7/9qDu8r7PNXY/0kgumeD6o1T6KxbIz2GtLaVuVH24fETz6dqLgSdGCw2PU3zHPRL+64Ea0uF+rrS/D9SqzlqSQBO3P0c28eJaGv+Vi5YC9ua/U3J1EsdTo=
