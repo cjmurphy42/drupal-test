@@ -27,4 +27,4 @@ after_script:
 
 notifications:
   slack:
-    secure: fI8gQDL91BUroJNogwj6DTNykKHwVv2GzgoaquNl1qOKg12l/f8U7/9qDu8r7PNXY/0kgumeD6o1T6KxbIz2GtLaVuVH24fETz6dqLgSdGCw2PU3zHPRL+64Ea0uF+rrS/D9SqzlqSQBO3P0c28eJaGv+Vi5YC9ua/U3J1EsdTo=
+    #secure: fI8gQDL91BUroJNogwj6DTNykKHwVv2GzgoaquNl1qOKg12l/f8U7/9qDu8r7PNXY/0kgumeD6o1T6KxbIz2GtLaVuVH24fETz6dqLgSdGCw2PU3zHPRL+64Ea0uF+rrS/D9SqzlqSQBO3P0c28eJaGv+Vi5YC9ua/U3J1EsdTo=
