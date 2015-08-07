@@ -31,7 +31,9 @@ before_script:
   - drush dl drupal-7.x
   - find . -ls
   - cd drupal-7.x-dev/sites/default
-  - drush -y site-install standard --account-name=admin --account-pass=admin --db-url=mysql://$DB_USERNAME@localhost/$DATABASE
+  - drush -y site-install minimal --account-name=admin --account-pass=admin --db-url=mysql://$DB_USERNAME@localhost/$DATABASE
+  - drush status
+  - cat /etc/hosts
   - curl http://localhost/
 
 script:
