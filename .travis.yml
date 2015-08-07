@@ -32,7 +32,7 @@ before_script:
   - find . -ls
   - cd drupal-7.x-dev/sites/default
   - drush -y site-install standard --account-name=admin --account-pass=admin --db-url=mysql://$DB_USERNAME@localhost/$DATABASE
-  - curl http://127.0.0.1/
+  - curl http://localhost/
 
 script:
   - drush -y en simpletest
