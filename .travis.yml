@@ -18,7 +18,7 @@ before_script:
   - drush status
   - drush dl drupal-7.x
   - find . -ls
-  - cd /var/www/drupal
+  - cd drupal-7.x-dev/sites/default
   - drush site-install standard --account-name=admin --account-pass=admin --db-url=mysql://YourMySQLUser:RandomPassword@localhost/YourMySQLDatabase
   - curl http://127.0.0.1/
 
