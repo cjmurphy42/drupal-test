@@ -4,6 +4,18 @@ language: php
 php:
   - 5.5
 
+env:
+    global:
+        - DATABASE='drupal'
+        - DB_USERNAME='root'
+        - DB_ENCODE='utf8'
+ 
+
+mysql:
+  database: $DATABASE
+  username: $DB_USERNAME
+  encoding: $DB_ENCODE
+
 before_install:
   - composer self-update
   - pear channel-discover pear.drush.org
